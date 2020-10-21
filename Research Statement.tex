@@ -94,7 +94,7 @@ My work so far has focused on quasi-Fuchsian manifolds, which are complete hyper
 Here $S$ is a smooth closed surface of genus greater than 1. 
 These manifolds are naturally compactified by two copies of $S$, called the surfaces at infinity, and these copies inherit both complex structures and complex projective structures (modeled on $\CP^1$) induced from $M$. 
 Moreover, such a hyperbolic manifold is uniquely determined (up to an equivalence) by the complex structures on these surfaces at infinity. 
-And so, the space of all such hyperbolic 3-manifolds (up to an equivalence) is in one-to-one correspondence with the product of two copies of $\mathcal{T}(S)$.
+And so (see \cite{bers1960}), the space of all such hyperbolic 3-manifolds (up to an equivalence) is in one-to-one correspondence with the product of two copies of $\mathcal{T}(S)$.
 
 
 For a quasi-Fuchsian manifold, when the complex structures on the surfaces at infinity are complex conjugates, the 3-manifold is called Fuchsian. 
@@ -136,6 +136,8 @@ Then
 The proof uses the construction of Epstein in \cite{epstein1984}, which describes a way to construct surfaces in hyperbolic space given a domain in $\CP^1$ and geometric data on that domain. 
 These data take the form of a conformal metric, which can be characterized as a metric conformally equivalent to $h$. 
 A variant of this construction gives a surface in $M$ from a conformal metric on the surface at infinity. 
+Epstein surfaces have been used by several other others to study the geometry of projective structures and hyperbolic 3-manifolds. 
+See, for example, \cite{anderson1998}, \cite{bromberg2004}, and \cite{krasnov-schlenker2008}. 
 One of the benefits of these Epstein surfaces is they have a very concrete description in terms of the defining conformal metric and its derivatives. 
 Indeed there are explicit formulas for the first and second fundamental forms (seen for example in \cite{dumas2017}) and for the Guassian and mean curvatures (seen for example in \cite{quinn2020}). 
 
@@ -163,7 +165,7 @@ and
 \]
 \end{thm}
 
-Such families we called \emph{Asymptotically Poincar\'e Families of Surfaces} since the family corresponding to multiples of the Poincar\'e metric $h$ is a canonical example (where $f(\epsilon) = \epsilon$). 
+Such families we called \emph{Asymptotically Poincar\'e Families} of surfaces since the family corresponding to multiples of the Poincar\'e metric $h$ is a canonical example (where $f(\epsilon) = \epsilon$). 
 This Poincar\'e family consists of parallel surfaces, i.e., copies of a surface flowed in its normal direction. 
 We showed an asymptotically Poincar\'e family gives a foliation of the end by approximately parallel surfaces.
 
@@ -185,7 +187,8 @@ Our work on the constant mean curvature case also furnishes a new proof of their
 A natural extension of my thesis is to consider not just families $(\sigma_\epsilon)$ that converge to $h$ in the asymptotically Poincar\'e sense, but to ask the same questions for families $(\sigma_\epsilon)$ that converge in the same sense to some fixed conformal metric $\sigma_0$. 
 We can ask similar questions:
 \begin{itemize}
-\item Do $[I_\epsilon]$ and $[I\!I_\epsilon]$ converge to $[\sigma_0] = [h]$ as $\epsilon \to 0$?
+\item Do the first and second fundamental forms still converge to the conformal class at infinity? 
+That is, do $[I_\epsilon]$ and $[I\!I_\epsilon]$ converge to $[\sigma_0] = [h]$ as $\epsilon \to 0$?
 \end{itemize}
 and 
 \begin{itemize}
@@ -193,57 +196,136 @@ and
 How are they related to the Schwarzian derivative of $\sigma_0$ and to the holomorphic quadratic differential $\phi$? 
 \end{itemize}
 The first of these should follow easily using the same ideas as in Theorem \ref{asym-poincare-thm}. 
-The second will need tools from the deformation theory of geometric structures to resolve. 
+Preliminary calculations suggest that yes, $[I(\sigma_\epsilon)]$ and $[\two(\sigma_\epsilon)]$ converge to $[\sigma_0] = [h]$.
+Moreover, we expect that it is still the case that $\dot{[\two(\sigma_\epsilon)]} = 0$.
+It also appears that $\dot{[I(\sigma_\epsilon)]}$ is indeed related to $\mathrm{Re}(B(\sigma_0))$, where $B(\sigma_0)$.
+Here $B(\sigma_0)$, the Schwarzian tensor of Osgood and Stowe \cite{osgood-stowe1992}, is a type of generalization of the Schwarzian derivative of a locally injective holomophic function to the setting of conformally equivalent metrics. 
+
+However, $B(\sigma_0)$ need not be holomorphic, i.e., if $\sigma_0$ does not have constant curvature, so $\mathrm{Re}(B(\sigma_0))$ is not a tangent vector to Teichm\"uller space (see \cite{tromba1992}). The actual tangent vector should be (the real part of) the holomorphic part of $B(\sigma_0)$. 
+It would be nice to find a more explicit description of the holomorphic part of a quadratic differential, and to verify these preliminary computations.
+
+\subsection{The Epstein-frame in higher dimensions}
+%%%%%%%%%%%
+\label{higher-dims}
+
+
+Epstein's construction in \cite{epstein1984} works in $\H^n$ for $n > 3$ as well, where his formula gives a map into the ball model $\mathbb{B}^n$.
+We have computed a formula for the Epstein surface into the hyperboloid model of hyperbolic space as a submanifold of $\R^{n+1}$.
+It is given by 
+\[
+\mathrm{Ep}_\sigma(x) = 
+\def\arraystretch{1.5}
+\begin{pmatrix}
+\frac{1}{2}\left( e^\eta + e^{-\eta} | \nabla \eta |^2 \right)x + e^{-\eta} \nabla \eta \\
+\frac{1}{4} \left(e^\eta + e^{-\eta} | \nabla \eta |^2 \right)( | x |^2 - 1) + e^{-\eta}(1 + x \cdot \nabla\eta) \\
+\frac{1}{4} \left(e^\eta + e^{-\eta} | \nabla \eta |^2 \right)( | x |^2 + 1) + e^{-\eta}(1 + x \cdot \nabla\eta)
+\end{pmatrix}
+\]
+where the dot product is the Euclidean inner product of $\R^{n+1}$ and the gradient is with respect to this metric.
+So far, this has only been verified for $n = 3$ and 4.
+
+It is possible to express this Epstein map as the orbit of a point in $\H^n$ by an $O(n,1)$-frame.
+In our case we have $\mathrm{Ep}_\sigma(x) = \widetilde{\mathrm{Ep}}_\sigma(x)p$ for the frame $\widetilde{\mathrm{Ep}}_\sigma: \Omega \to O(n,1)$ given by $\widetilde{\mathrm{Ep}}_\sigma(x) = A(x) B_\sigma(x) C_\sigma(x)$, where 
+\begin{align*}
+A(x) &= \def\arraystretch{1.5}\begin{pmatrix}
+Id_{n-1} & -x & x \\
+x^t & 1- \frac{1}{2}|x|^2 & \frac{1}{2} |x|^2 \\
+x^t & -\frac{1}{2}|x|^2 & 1 + \frac{1}{2} |x|^2
+\end{pmatrix} \\ 
+B_\sigma(x) &= 
+\def\arraystretch{1.5}
+\begin{pmatrix}
+Id_{n-1} & \frac{1}{2} \nabla\eta  & \frac{1}{2}\nabla\eta \\
+-\frac{1}{2} \nabla\eta^t & 1-\frac{1}{8} |\nabla\eta|^2 & -\frac{1}{8} |\nabla\eta|^2 \\
+\frac{1}{2}\nabla\eta^t & \frac{1}{8} |\nabla\eta|^2 & 1 + \frac{1}{8} |\nabla\eta|^2 
+\end{pmatrix} \\
+C_\sigma(x) &= 
+\def\arraystretch{1.5}
+\begin{pmatrix}
+Id_{n-1} & 0 & 0 \\
+0 & \cosh(\eta) & -\sinh(\eta) \\
+0 & -\sinh(\eta) & \cosh(\eta) 
+\end{pmatrix}
+\end{align*}
+and the point $p = (0, \ldots, 0 , 3/4,5/4)^t$.
+
+A natural next step would be to use this description of the Epstein map to get closed formulas for the induced metric on the Epstein surface and its curvature, perhaps in terms of the Schwarzian tensor of Osgood and Stowe \cite{osgood-stowe1992}.
+We also hope to investigate constant curvature hypersurfaces similarly to our work done in the previous sections using these explicit formulas. 
+
+
 
 \subsection{Extension to de Sitter Space}
-Via the map $U\H^3 \hookrightarrow T dS^3$ from the unit tangent bundle of hyperbolic space to the tangent bundle of de Sitter space given by $(p,v) \mapsto (v,p)$, a surface $S$ with a normal vector field in hyperbolic space has a dual surface $S^*$ in de Sitter space. 
-And so, each $k$-surface in hyperbolic space has a dual surface in de Sitter space. 
-It turns out the dual surface to a $k$-surface also has constant Gaussian curvature and this family of dual $k$-surfaces foliates an end of de Sitter space. 
-Moreover, this family may similarly be considered as a path in Teichm\"uller space. 
-One can show that the dual family also converges to $[h]$ and so these two paths meet at $[h]$ when $k = 0$. 
-If one forms the concatenated path $\gamma :(-1,1) \to \mathcal{T}$ with $\gamma(0) = [h]$, then $\gamma$ is continuous. 
-A preliminary calculation using my results appears to show that this path is differentiable at $[h]$. 
+Via the map $U\H^3 \hookrightarrow T dS^3$ from the unit tangent bundle of hyperbolic space to the tangent bundle of de Sitter space given by $(p,v) \mapsto (v,p)$, a strictly convex surface $S$ with a normal vector field in hyperbolic space has a dual surface $S^*$ in de Sitter space, see \cite{hodgson-rivin1993} or \cite{schlenker2002}. 
+
+This correspondence extends to a duality between hyperbolic ends of 3-manifolds and certain de Sitter space-time 3-manifolds (see \cite{mess2007}).
+Therefore, fix a quasi-Fuchsian manifold and an end $E$.
+Let $E^*$ be the corresponding de Sitter space-time.
+The $k$-surface $S_k$ in $E$ has a dual surface $S_k^*$ in $E^*$ which also has constant Gaussian curvature, as shown by a computation. 
+One can show, see \cite{labourie1992}, that the induced metric $I_k^*$ on $S_k^*$ also satisfies $[I_k^*] \to [h]$ in $\mathcal{T}(S)$ as $k \to 0$. 
+Hence the paths $[I_k]$ and $[I_k^*]$ meet at $[h]$ when $k = 0$. 
+
+A preliminary calculation shows that $\dot{[I_k^*]} = +\mathrm{Re}(\phi)$, and so if one forms the concatenated path $\gamma : (-1,1) \to \mathcal{T}(S)$ by 
+\[
+\gamma(t) = 
+\begin{cases}
+[I_t^*]  & -1 < t \leq 0 \\
+[I_{-t}] & 0 \leq t < 1
+\end{cases}
+\]
+then $\gamma'(0) = \mathrm{Re}(\phi)$, so that this path is differentiable. 
 Based on this, I conjecture the following, which I intend to prove.
 
-\begin{conj}
+\begin{conj*}
 \label{deSitter path}
 Let $\gamma: (-1,1) \to \mathcal{T}(S)$ be the concatenated path induced by the $k$-surface foliation and the dual foliation. 
 Then $\gamma$ is a smooth curve. 
-\end{conj}
+\end{conj*}
 
 
+\subsection{Other Equivariant Constructions}
 
-\subsection{Constant Mean Curvature Foliations}
-Foliations by constant mean curvature surfaces have been widely used to study the geometry of 3-manifolds. 
-For example, in certain spacetimes, they may be used to define time functions. A natural question, attributed to Thurston in \cite{huang-wang2013}, is
-whether quasi-Fuchsian manifolds admit foliations by constant mean curvature surfaces. 
-In \cite{huang-wang2013} Huang and Wang constructed a quasi-Fuchsian manifold which does not admit such a foliation. 
-However, this manifold contains two minimal surfaces and so the question may still be asked for the class of almost-Fuchsian manifolds.
-\begin{conj}[Thurston]
-\label{almost Fuchsian cmc}
-An almost-Fuchsian manifold admits a foliation by constant mean curvature surfaces.
-\end{conj}
-
-Filippo Mazzoli is using my work (in \cite{mazzoli2019}) to show that as $k \to 0$, the parametrization by $k$-surfaces of hyperbolic ends (see \cite{labourie1992}) limits to the Schwarzian parametrization. 
-Combining my work and his, he has shown that a foliation by $k$-surfaces can be seen as an integral curve of a time-dependent Hamiltonian vector field on $T^*\mathcal{T}(S)$. 
-Similar arguments give the same results for constant mean curvature foliations. 
-Therefore, a foliation by constant mean curvature surfaces is an integral curve of this vector field. 
-By showing this vector field is complete, Mazzoli and I hope to prove Thurston's conjecture.  
-
-\subsection{Complex Hyperbolic Space}
-Finally, I am interested in how many of these questions can be answered in the complex hyperbolic setting. 
-For example:
+Epstein surfaces are consequences of the fact that $U\H^3$ is isomorphic to the bundle of 1-jets of conformal metrics on $\partial^\infty( \H^3) \simeq \CP^1$, and that this isomorphism is equivariant with respect to the isometry group of $\H^3$. 
+Naturally, I wonder
 \begin{itemize}
-\item Do complex hyperbolic ends admit foliations by constant curvature (hyper)surfaces?
-\item To this end, do any of the same tools transfer to the complex setting? 
+
+\item Are there other examples of equivariant isomorphisms between a symmetric space or bundles associated to the Frame bundle of the symmetric space and jet spaces of infinitesimal data on the (or a) boundary of the symmetric space? 
+
 \end{itemize}
-For my work, Epstein surfaces have been quite integral. 
-So I ask:
+
+Moreover, 
+
 \begin{itemize}
-\item Is there an Epstein-like construction for complex hyperbolic space, i.e., an analogous way of taking geometric data on the ideal boundary $\partial^\infty \H_{\C}^n$ and constructing a (hyper)surface in $\H_{\C}^n$ such that this construction is equivariant with respect to the isometry group? 
+
+\item Even if there is not an isomorphism, are there embeddings of associated bundles on the symmetric space into, say, k-jets of Riemannian metrics on the boundary?
+
+\item Which $k$ is optimal or sharpe?
+
+\item If so, which metrics are in the image of the embedding?
+
+\end{itemize}
+
+One example I will investigate is complex hyperbolic space $\H_{\C}^n$.
+Here the Gauss map which sends a unit tangent vector to the ideal endpoint of the geodesic ray in the direction of the vector is still a diffeomorphism. So, we still have a visual metric construction sending the induced metric on a unit tangent sphere to a Riemannian metric on the visual boundary $\partial^\infty (\H_{\C}^n) \simeq S^{2n-1}$. 
+
+\begin{itemize}
+
+\item Are the visual metrics from different points still conformally equivalent as they were in the real hyperbolic setting?
+
+\item What surfaces in $\H_{\C}^n$ can we get out of this construction? How explicitly can we determine the geometry of the surfaces? For example, can we get formulas for the induced metrics? For the curvatures?
+
+\item Can we find an $\mathrm{Isom}(\H_{\C}^n)$ frame-field description of these surfaces similar to that given in \cite{dumas2017} for the real hyperbolic case in dimension 3, or similar to the proposed frame given here in Section \ref{higher-dims}?
+
 \item For $n=2$, in what way does the fact that the boundary at infinity $\partial^\infty \H_{\C}^2$ is the 1-point compactification of the Heisenberg group affect this construction?
+
 \end{itemize}
-I intend to find a $\mathrm{Isom}(\H_{\C}^2)$ frame-field description of these complex Epstein surfaces, similar to that given in \cite{dumas2017} for the real hyperbolic case, and use this to answer these questions.
+Once I determine the answers to these questions I can ask how many of the results on foliations of hyperbolic ends transfer to the complex setting. Indeed,
+\begin{itemize}
+
+\item Do complex hyperbolic ends admit foliations by constant curvature (hyper)surfaces?
+
+\item Is the asymptotics of such a foliation determined by the geometry of the hyperbolic manifold and the boundary at infinity?
+
+\end{itemize}
 
 
 
