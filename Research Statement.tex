@@ -71,8 +71,8 @@ Specifically, my research projects often seek to answer geometric questions usin
 These questions usually involve Riemannian manifolds, which are topological spaces modeled on Euclidean space and equipped with a notion of distance based on a quadratic form at each point. 
 These quadratic forms bundled together are called a Riemannian metric, and this metric lets us investigate the geometry of these spaces.  
 Indeed, the metric is used to define several familiar geometric concepts. 
-For example, the notion of a straight line in this setting is captured by geodesics, and these are locally solutions to a system of nonlinear ODEs with coefficient defined from the metric. 
-The curvature of a Riemannian manifold may be thought of as the obstruction to the manifold being locally isometric to flat Euclidean space and it can be expressed solely in terms of the metric and its derivatives.  
+For example, the notion of a straight line in this setting is captured by geodesics, and these are locally solutions to a system of nonlinear ODEs with coefficients defined from the metric. 
+The curvature of a Riemannian manifold may be thought of as the obstruction to the manifold being locally isometric to flat Euclidean space, and it can be expressed solely in terms of the metric and its derivatives.  
 My work deals with similar topics in the setting of 3-dimensional hyperbolic manifolds, that is, 3-manifolds whose curvature is everywhere equal to $-1$.
 
 
@@ -80,7 +80,7 @@ One of the main strategies in my work is to study surfaces in hyperbolic manifol
 These surfaces may be in the context of embedded minimal surfaces (surfaces which locally minimize area), or in foliations of a manifold or its ends, or as surfaces which naturally compactify a 3-manifold. 
 Since surfaces are so vital to the study of hyperbolic 3-manifolds, Teichm\"uller theory is frequently employed. 
 We denote by $\mathcal{T}(S)$ the Teichm\"uller space of $S$, which is the space of all of its complex structures (modeling $S$ on $\C$), up to an equivalence. 
-This space may also be described as a space of conformal classes of metrics (up to another equivalence), where two metric are conformal if they assign the same angles.
+This space may also be described as a space of conformal classes of metrics (up to another equivalence), where two metrics are conformal if they assign the same angles.
 
 
 I have mainly focused on quasi-Fuchsian manifolds, which are complete hyperbolic manifolds $M$ diffeomorphic to $S \times (-1,1)$ that contain a non-empty compact geodesically-convex subset. 
@@ -89,13 +89,13 @@ These manifolds are naturally compactified by two copies of $S$, called the surf
 My main results relate the limiting behavior of foliations of ends of quasi-Fuchsian manifolds to the complex projective geometry on the surfaces at infinity.
 
 More specifically, I characterize the infinitesimal behavior of certain foliations that are asymptotic to a canonical foliation defined using the complex structures at infinity. 
-This class of foliations I define contains the constant Gaussian curvature foliations of Labourie, and my main result resolves a conjecture he states in \cite{labourie1992} concerning their behavior as they leave the end of the manifold. 
-Moreover, the constant mean curvature foliations of Mazzeo and Pacard \cite{mazzeo-pacard2011} form another example of my class of foliations and so my results dictate their asymptotics as well.
+This class of foliations I define contains the constant Gaussian curvature foliations of Labourie, and my main result resolves a conjecture he states in \cite{labourie1992}, which concerns their behavior as they leave the end of the manifold. 
+Moreover, the constant mean curvature foliations of Mazzeo and Pacard \cite{mazzeo-pacard2011} form another example of my class of foliations, so my results dictate their asymptotics as well.
 
 My main research techniques deal with taking infinitesimal data on the boundary at infinity of hyperbolic space and constructing surfaces embedded inside hyperbolic space. 
 The main example of this is the construction due to Epstein in \cite{epstein1984}, which is a manifestation of an equivariant isomorphism between a bundle over hyperbolic space and a jet-bundle of Riemannian metrics on the boundary. 
-I indent to use the same construction to investigate surfaces in 3-dimensional deSitter space, which is in a certain sense dual to hyperbolic space. 
-I will investigate whether Epstein's construction in higher dimensions is still a consequence of some similar isomorphism, and whether it can be used to determine the geometric behavior of hypersurfaces in higher dimensional hyperbolic ends.
+I intend to use the same construction to investigate surfaces in 3-dimensional deSitter space, which is in a certain sense dual to hyperbolic space. 
+I will investigate whether Epstein's construction in higher dimensions is still a consequence of some similar isomorphism and whether it can be used to determine the geometric behavior of hypersurfaces in higher dimensional hyperbolic ends.
 I will also look in general for other examples of equivariant isomorphisms between bundles over symmetric spaces and bundles of infinitesimal data over the boundaries of the symmetric spaces, with one specific example of interest being complex hyperbolic space.
 
 
@@ -115,7 +115,7 @@ He asks about the infinitesimal behavior of this path and suggests that it shoul
 In my thesis \cite{quinn2020} I showed this is the case by establishing a precise formula relating the projective structure and limiting $k$-surface behavior.
 If $I_k$ is the family of first fundamental forms, i.e., the metrics of the $k$-surfaces induced from being submanifolds of $M$, then Labourie showed that the underlying conformal structures $[I_k]$ form a path in Teichm\"uller space that converges to the class of the hyperbolic metric $[h]$ representing the complex structure at infinity. 
 These same considerations apply to $I\!I_k$, the second fundamental forms of the $k$-surfaces which also induce points in $\mathcal{T}(S)$. 
-We proved the following regarding the infinitesimal behavior of the paths at $[h]$.
+I proved the following regarding the infinitesimal behavior of the paths at $[h]$.
 
 \begin{thm}
 \label{k-surfaces-thm}
@@ -153,7 +153,7 @@ Then
 \[
 [I_\epsilon] \to  [h]  \text{ and } \, [I\!I_\epsilon] \to [h]  \text{ as } \epsilon \to 0,
 \]
-and the tangent vectors at $\epsilon = 0$ are give by
+and the tangent vectors at $\epsilon = 0$ are given by
 \[
 \dot{[I_\epsilon]} = -4 f'(0) \mathrm{Re}(\phi) \text{ and } \, \dot{[I\!I_\epsilon]} = 0. 
 \]
@@ -203,8 +203,8 @@ and
 How are they related to the Schwarzian derivative of $\sigma_0$ and to the holomorphic quadratic differential $\phi$? 
 \end{itemize}
 The first of these should follow using the same ideas as in Theorem \ref{asym-poincare-thm}. 
-Preliminary calculations suggest that yes, $[I(\sigma_\epsilon)]$ and $[\two(\sigma_\epsilon)]$ converge to $[\sigma_0] = [h]$.
-Moreover, we expect that it is still the case that $\dot{[\two(\sigma_\epsilon)]} = 0$.
+Preliminary calculations suggest that yes, $[I(\sigma_\epsilon)]$ and $[I\!I(\sigma_\epsilon)]$ converge to $[\sigma_0] = [h]$.
+Moreover, we expect that it is still the case that $\dot{[I\!I(\sigma_\epsilon)]} = 0$.
 It also appears that $\dot{[I(\sigma_\epsilon)]}$ is indeed related to $\mathrm{Re}(B(\sigma_0))$.
 Here $B(\sigma_0)$ is the Schwarzian tensor of Osgood and Stowe \cite{osgood-stowe1992}.
 It is a type of generalization of the Schwarzian derivative of a locally injective holomophic function to the setting of conformally equivalent metrics. 
@@ -321,7 +321,7 @@ Here the Gauss map which sends a unit tangent vector to the ideal endpoint of th
 
 \item Can we find an $\mathrm{Isom}(\H_{\C}^n)$ frame-field description of these surfaces similar to that given in \cite{dumas2017} for the real hyperbolic case in dimension 3, or similar to the proposed frame given here in Section \ref{higher-dims}?
 
-\item For $n=2$, in what way does the fact that the boundary at infinity $\partial^\infty \H_{\C}^2$ is the 1-point compactification of the Heisenberg group affect this construction?
+\item For $n=2$, the boundary at infinity of $\partial^\infty (\H_{\C}^2)$ is the 1-point compactification of the Heisenberg group. In what way does this affect this construction?
 
 \end{itemize}
 Once I determine the answers to these questions I can ask how many of the results on foliations of hyperbolic ends transfer to the complex setting. Indeed,
